@@ -42,9 +42,11 @@ void loop() {
 	if (pinACCState == 0) { //When 12V is on ACC line, this pin goes low level
 		timeLastPowerOn = CurrentTime; //remember the time when the ACC is high
 		digitalWrite(pinPowerRelay, ON); // power on PC
+		digitalWrite(ledPin, ON); // turn built-in LED on
 	}
 	if (CurrentTime > (timeLastPowerOn + timePowerOffDelay)) {
 		digitalWrite(pinPowerRelay, OFF); // power PC off if ACC lost more than delay
+		digitalWrite(ledPin, OFF); // turn built-in LED off
 	}
 	if ((CurrentTime > (timeLastPowerOn + timePushPowerButtonDelay)) \
 		&& (CurrentTime < (timeLastPowerOn + timePushPowerButtonDelay + timePushPowerButton))) {
