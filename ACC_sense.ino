@@ -43,17 +43,17 @@ void loop() {
 	// check the state of ACC line
 	if (pinACCState == ON) { //if ACC line is turned on
 		timeLastPowerOn = CurrentTime; //remember the time when the ACC is high
-		digitalWrite(pinPowerRelay, ON); // power on PC
+		digitalWrite(pinPowerRelay, ON); // power up PC power supply
 		digitalWrite(ledPin, ON); // turn built-in LED on
 	}
 	if (CurrentTime > (timeLastPowerOn + timePowerOffDelay)) {
-		digitalWrite(pinPowerRelay, OFF); // power PC off if ACC lost more than delay
+		digitalWrite(pinPowerRelay, OFF); // power down PC power supply off. PC must be shutted down
 		digitalWrite(ledPin, OFF); // turn built-in LED off
 	}
 	if ((CurrentTime > (timeLastPowerOn + timePushPowerButtonDelay)) \
 		&& (CurrentTime < (timeLastPowerOn + timePushPowerButtonDelay + timePushPowerButton))) {
-		digitalWrite(pinPowerButton, ON); // power PC off if ACC lost more than delay
+		digitalWrite(pinPowerButton, ON); // emulate PC "power" button to start sutdown process
 	} else {
-		digitalWrite(pinPowerButton, OFF); // power PC off if ACC lost more than delay
+		digitalWrite(pinPowerButton, OFF); // end of emulating
 	}
 }
