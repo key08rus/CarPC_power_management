@@ -41,7 +41,7 @@ void loop() {
 	// read the ACC voltage sensor input pin:
 	pinACCState = digitalRead(pinACC);
 	// check the state of ACC line
-	if (pinACCState == ON) { //if ACC line is turned on
+	if (pinACCState == ACC_ON) { //if ACC line is turned on
 		timeLastPowerOn = CurrentTime; //remember the time when the ACC is high
 		digitalWrite(pinPowerRelay, ON); // power up PC power supply
 		digitalWrite(ledPin, ON); // turn built-in LED on
