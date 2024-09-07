@@ -1,15 +1,15 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "CarPC Power controller"
 Date ""
-Rev ""
-Comp ""
+Rev "1"
+Comp "Home lab"
 Comment1 ""
-Comment2 ""
+Comment2 "Kirill V. Ustyuzhanin"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -20,10 +20,10 @@ BATT
 Text GLabel 2050 4500 0    50   Input ~ 0
 GND
 $Comp
-L Isolator:PC817 U?
+L Isolator:PC817 U1
 U 1 1 66D7E767
 P 2850 3550
-F 0 "U?" H 2850 3875 50  0000 C CNN
+F 0 "U1" H 2850 3875 50  0000 C CNN
 F 1 "PC817" H 2850 3784 50  0000 C CNN
 F 2 "Package_DIP:DIP-4_W7.62mm" H 2650 3350 50  0001 L CIN
 F 3 "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf" H 2850 3550 50  0001 L CNN
@@ -35,7 +35,7 @@ L Device:R R1
 U 1 1 66D7F46F
 P 2550 3100
 F 0 "R1" H 2620 3146 50  0000 L CNN
-F 1 "4700" H 2620 3055 50  0000 L CNN
+F 1 "4k7" H 2620 3055 50  0000 L CNN
 F 2 "" V 2480 3100 50  0001 C CNN
 F 3 "~" H 2550 3100 50  0001 C CNN
 	1    2550 3100
@@ -46,7 +46,7 @@ L Device:R R2
 U 1 1 66D7F9A0
 P 3150 3100
 F 0 "R2" H 3220 3146 50  0000 L CNN
-F 1 "4700" H 3220 3055 50  0000 L CNN
+F 1 "4k7" H 3220 3055 50  0000 L CNN
 F 2 "" V 3080 3100 50  0001 C CNN
 F 3 "~" H 3150 3100 50  0001 C CNN
 	1    3150 3100
@@ -86,10 +86,10 @@ F 3 "" H 3150 3950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MCU_Module:Arduino_Nano_v3.x A?
+L MCU_Module:Arduino_Nano_v3.x A1
 U 1 1 66D80CCF
 P 5050 4050
-F 0 "A?" H 5050 2961 50  0000 C CNN
+F 0 "A1" H 5050 2961 50  0000 C CNN
 F 1 "Arduino_Nano_v3.x" H 5050 2870 50  0000 C CNN
 F 2 "Module:Arduino_Nano" H 5200 3100 50  0001 L CNN
 F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 5050 3050 50  0001 C CNN
@@ -97,91 +97,36 @@ F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 5050 3050 50
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:BC817 Q1
-U 1 1 66D81E40
-P 7050 3400
-F 0 "Q1" H 7241 3446 50  0000 L CNN
-F 1 "BC817" H 7241 3355 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7250 3325 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC817.pdf" H 7050 3400 50  0001 L CNN
-	1    7050 3400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:BC817 Q2
-U 1 1 66D82C67
-P 7050 4550
-F 0 "Q2" H 7241 4596 50  0000 L CNN
-F 1 "BC817" H 7241 4505 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7250 4475 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC817.pdf" H 7050 4550 50  0001 L CNN
-	1    7050 4550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Relay:DIPxx-1Axx-11x K1
-U 1 1 66D83B0C
-P 8100 2800
-F 0 "K1" H 8430 2846 50  0000 L CNN
-F 1 "DIPxx-1Axx-11x" H 8430 2755 50  0000 L CNN
-F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 8450 2750 50  0001 L CNN
-F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 8100 2800 50  0001 C CNN
-	1    8100 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Relay:DIPxx-1Axx-11x K2
-U 1 1 66D852EF
-P 8100 4200
-F 0 "K2" H 8430 4246 50  0000 L CNN
-F 1 "DIPxx-1Axx-11x" H 8430 4155 50  0000 L CNN
-F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 8450 4150 50  0001 L CNN
-F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 8100 4200 50  0001 C CNN
-	1    8100 4200
-	1    0    0    -1  
-$EndComp
-$Comp
 L Diode:1N4004 D1
 U 1 1 66D85CF4
-P 7550 2750
-F 0 "D1" V 7504 2829 50  0000 L CNN
-F 1 "1N4004" V 7595 2829 50  0000 L CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7550 2575 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7550 2750 50  0001 C CNN
-	1    7550 2750
-	0    1    1    0   
-$EndComp
-$Comp
-L Diode:1N4004 D2
-U 1 1 66D86FFF
-P 7550 4100
-F 0 "D2" V 7504 4179 50  0000 L CNN
-F 1 "1N4004" V 7595 4179 50  0000 L CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7550 3925 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7550 4100 50  0001 C CNN
-	1    7550 4100
+P 7150 3100
+F 0 "D1" V 7104 3179 50  0000 L CNN
+F 1 "1N4004" V 7195 3179 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7150 2925 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7150 3100 50  0001 C CNN
+	1    7150 3100
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 66D87B87
-P 7150 5200
-F 0 "#PWR?" H 7150 4950 50  0001 C CNN
-F 1 "GND" H 7155 5027 50  0000 C CNN
-F 2 "" H 7150 5200 50  0001 C CNN
-F 3 "" H 7150 5200 50  0001 C CNN
-	1    7150 5200
+P 6750 5550
+F 0 "#PWR?" H 6750 5300 50  0001 C CNN
+F 1 "GND" H 6755 5377 50  0000 C CNN
+F 2 "" H 6750 5550 50  0001 C CNN
+F 3 "" H 6750 5550 50  0001 C CNN
+	1    6750 5550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 66D87EEE
-P 7150 3900
-F 0 "#PWR?" H 7150 3650 50  0001 C CNN
-F 1 "GND" H 7155 3727 50  0000 C CNN
-F 2 "" H 7150 3900 50  0001 C CNN
-F 3 "" H 7150 3900 50  0001 C CNN
-	1    7150 3900
+P 6400 4250
+F 0 "#PWR?" H 6400 4000 50  0001 C CNN
+F 1 "GND" H 6405 4077 50  0000 C CNN
+F 2 "" H 6400 4250 50  0001 C CNN
+F 3 "" H 6400 4250 50  0001 C CNN
+	1    6400 4250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -205,83 +150,30 @@ Wire Wire Line
 Wire Wire Line
 	3150 2750 3150 2950
 Wire Wire Line
-	2050 2600 4950 2600
-Wire Wire Line
 	4950 2600 4950 3050
-Wire Wire Line
-	4950 2600 4950 2250
-Wire Wire Line
-	4950 2250 7400 2250
-Wire Wire Line
-	7900 2250 7900 2450
 Connection ~ 4950 2600
 Wire Wire Line
-	7550 2600 7550 2450
+	7500 4100 7500 4250
 Wire Wire Line
-	7550 2450 7900 2450
-Connection ~ 7900 2450
+	7500 3450 7150 3450
 Wire Wire Line
-	7900 2450 7900 2500
+	7500 5000 7500 4850
 Wire Wire Line
-	7550 3950 7550 3750
-Wire Wire Line
-	7550 3750 7900 3750
-Wire Wire Line
-	7900 3750 7900 3900
-Wire Wire Line
-	7900 3100 7550 3100
-Wire Wire Line
-	7150 3100 7150 3200
-Wire Wire Line
-	7150 4350 7500 4350
-Wire Wire Line
-	7500 4350 7500 4650
-Wire Wire Line
-	7500 4650 7900 4650
-Wire Wire Line
-	7900 4650 7900 4500
-Wire Wire Line
-	7150 4750 7150 5200
-Wire Wire Line
-	7150 3600 7150 3900
-Wire Wire Line
-	7550 4250 7500 4250
-Wire Wire Line
-	7500 4250 7500 4350
-Connection ~ 7500 4350
-Wire Wire Line
-	7550 2900 7550 3100
-Connection ~ 7550 3100
-Wire Wire Line
-	7550 3100 7150 3100
+	7150 3250 7150 3450
+Connection ~ 7150 3450
 Wire Wire Line
 	4550 3750 4200 3750
 Wire Wire Line
 	4200 3750 4200 5600
 Wire Wire Line
-	4200 5600 6350 5600
-Wire Wire Line
-	6350 5600 6350 3400
-Wire Wire Line
-	6350 3400 6850 3400
-Wire Wire Line
 	4550 3850 4300 3850
 Wire Wire Line
 	4300 3850 4300 5800
 Wire Wire Line
-	4300 5800 6650 5800
+	7000 2600 7000 4100
+Connection ~ 7000 2600
 Wire Wire Line
-	6650 5800 6650 4550
-Wire Wire Line
-	6650 4550 6850 4550
-Wire Wire Line
-	7400 2250 7400 3750
-Wire Wire Line
-	7400 3750 7550 3750
-Connection ~ 7400 2250
-Wire Wire Line
-	7400 2250 7900 2250
-Connection ~ 7550 3750
+	7000 2600 7150 2600
 $Comp
 L power:GND #PWR?
 U 1 1 66D8F76D
@@ -302,26 +194,160 @@ Wire Wire Line
 Wire Wire Line
 	4050 3650 4550 3650
 Connection ~ 3150 3450
-Wire Wire Line
-	7900 2450 8300 2450
-Wire Wire Line
-	8300 2450 8300 2500
-Text GLabel 9200 3200 2    50   Output ~ 0
+Text GLabel 8800 3550 2    50   Output ~ 0
 PWR_CarPC
-Text GLabel 9250 3800 2    50   Output ~ 0
+Text GLabel 8850 4150 2    50   Output ~ 0
 Button
-Text GLabel 9250 4550 2    50   Output ~ 0
+Text GLabel 8850 4900 2    50   Output ~ 0
 Button
 Wire Wire Line
-	8300 3900 8300 3800
+	7900 4850 7900 4900
 Wire Wire Line
-	8300 3800 9250 3800
+	7900 4900 8850 4900
 Wire Wire Line
-	8300 4500 8300 4550
+	7900 3450 7900 3550
 Wire Wire Line
-	8300 4550 9250 4550
+	7900 3550 8800 3550
+$Comp
+L Relay:G5LE-1 K1
+U 1 1 66DC5E31
+P 7700 3150
+F 0 "K1" H 8130 3196 50  0000 L CNN
+F 1 "G5LE-1" H 8130 3105 50  0000 L CNN
+F 2 "Relay_THT:Relay_SPDT_Omron-G5LE-1" H 8150 3100 50  0001 L CNN
+F 3 "http://www.omron.com/ecb/products/pdf/en-g5le.pdf" H 7700 3150 50  0001 C CNN
+	1    7700 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Relay:G5LE-1 K2
+U 1 1 66DC8BC4
+P 7700 4550
+F 0 "K2" H 8130 4596 50  0000 L CNN
+F 1 "G5LE-1" H 8130 4505 50  0000 L CNN
+F 2 "Relay_THT:Relay_SPDT_Omron-G5LE-1" H 8150 4500 50  0001 L CNN
+F 3 "http://www.omron.com/ecb/products/pdf/en-g5le.pdf" H 7700 4550 50  0001 C CNN
+	1    7700 4550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	8300 3100 8300 3200
+	8000 4150 8000 4250
 Wire Wire Line
-	8300 3200 9200 3200
+	8000 4150 8850 4150
+Wire Wire Line
+	6750 5400 6750 5550
+Wire Wire Line
+	6750 5000 7000 5000
+$Comp
+L Diode:1N4004 D2
+U 1 1 66D86FFF
+P 7000 4450
+F 0 "D2" V 6954 4529 50  0000 L CNN
+F 1 "1N4004" V 7045 4529 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7000 4275 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7000 4450 50  0001 C CNN
+	1    7000 4450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7000 4100 7000 4300
+Connection ~ 7000 4100
+Wire Wire Line
+	7000 4600 7000 5000
+Connection ~ 7000 5000
+Wire Wire Line
+	7000 4100 7500 4100
+Wire Wire Line
+	7000 5000 7500 5000
+Wire Wire Line
+	7500 2600 8000 2600
+Wire Wire Line
+	8000 2600 8000 2850
+Connection ~ 7500 2600
+Connection ~ 7150 2600
+Wire Wire Line
+	7150 2600 7500 2600
+Wire Wire Line
+	7150 2600 7150 2950
+Wire Wire Line
+	7500 2600 7500 2850
+Wire Wire Line
+	6400 3550 6400 3450
+Wire Wire Line
+	6400 3950 6400 4250
+Wire Wire Line
+	6400 3450 7150 3450
+$Comp
+L Device:R R3
+U 1 1 66DE69C6
+P 5950 3750
+F 0 "R3" V 5743 3750 50  0000 C CNN
+F 1 "1k0" V 5834 3750 50  0000 C CNN
+F 2 "" V 5880 3750 50  0001 C CNN
+F 3 "~" H 5950 3750 50  0001 C CNN
+	1    5950 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 66DE78CF
+P 6300 5200
+F 0 "R4" V 6093 5200 50  0000 C CNN
+F 1 "1k0" V 6184 5200 50  0000 C CNN
+F 2 "" V 6230 5200 50  0001 C CNN
+F 3 "~" H 6300 5200 50  0001 C CNN
+	1    6300 5200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6150 5200 6150 5800
+$Comp
+L Transistor_BJT:2N3904 Q1
+U 1 1 66DECFF0
+P 6300 3750
+F 0 "Q1" H 6490 3796 50  0000 L CNN
+F 1 "2N3904" H 6490 3705 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6500 3675 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 6300 3750 50  0001 L CNN
+	1    6300 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2N3904 Q2
+U 1 1 66DEDB95
+P 6650 5200
+F 0 "Q2" H 6840 5246 50  0000 L CNN
+F 1 "2N3904" H 6840 5155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6850 5125 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 6650 5200 50  0001 L CNN
+	1    6650 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 66DEFBB4
+P 7700 3850
+F 0 "#PWR?" H 7700 3600 50  0001 C CNN
+F 1 "GND" H 7705 3677 50  0000 C CNN
+F 2 "" H 7700 3850 50  0001 C CNN
+F 3 "" H 7700 3850 50  0001 C CNN
+	1    7700 3850
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 3750 2    50   Output ~ 0
+PWR_CarPC
+Wire Wire Line
+	7700 3850 7700 3750
+Wire Wire Line
+	7700 3750 8800 3750
+Wire Wire Line
+	4950 2600 7000 2600
+Wire Wire Line
+	2050 2600 4950 2600
+Wire Wire Line
+	4200 5600 5800 5600
+Wire Wire Line
+	5800 3750 5800 5600
+Wire Wire Line
+	4300 5800 6150 5800
 $EndSCHEMATC
