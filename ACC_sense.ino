@@ -4,6 +4,8 @@
 // defines
 #define OFF 0
 #define ON 1
+#define ACC_ON 0
+#define ACC_OFF 1
 
 // constants (schematic depended)
 const int  pinACC = 2;    // VCC sensor (12V)
@@ -39,7 +41,7 @@ void loop() {
 	// read the ACC voltage sensor input pin:
 	pinACCState = digitalRead(pinACC);
 	// check the state of ACC line
-	if (pinACCState == 0) { //When 12V is on ACC line, this pin goes low level
+	if (pinACCState == ON) { //if ACC line is turned on
 		timeLastPowerOn = CurrentTime; //remember the time when the ACC is high
 		digitalWrite(pinPowerRelay, ON); // power on PC
 		digitalWrite(ledPin, ON); // turn built-in LED on
