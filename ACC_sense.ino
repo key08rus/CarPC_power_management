@@ -6,6 +6,8 @@
 #define ON 1
 #define ACC_ON 0
 #define ACC_OFF 1
+#define YES 1
+#define NO 0
 
 // constants (schematic depended)
 const int  pinACC = 2;    // VCC sensor (12V)
@@ -20,6 +22,7 @@ unsigned long timePushPowerButton = 500; //how long button is pushed (0.5 sec by
 unsigned long timePowerOffDelay = 10000; //delay after ACC loss before totally powering off PC (10 sec by default)
 unsigned long CurrentTime = 0;
 int pinACCState = OFF;
+int flagCanPressButtonAgain = 1;
 
 void setup() {
   // initialize ACC sensing pin as an input:
@@ -49,10 +52,13 @@ void loop() {
 	if (CurrentTime > (timeLastPowerOn + timePowerOffDelay)) {
 		digitalWrite(pinPowerRelay, OFF); // power down PC power supply off. PC must be shutted down
 		digitalWrite(ledPin, OFF); // turn built-in LED off
+		flagCanPressButtonAgain = YES;
 	}
 	if ((CurrentTime > (timeLastPowerOn + timePushPowerButtonDelay)) \
-		&& (CurrentTime < (timeLastPowerOn + timePushPowerButtonDelay + timePushPowerButton))) {
+		&& (CurrentTime < (timeLastPowerOn + timePushPowerButtonDelay + timePushPowerButton))\ 
+		&& (flagCanPressButtonAgain == YES)) {
 		digitalWrite(pinPowerButton, ON); // emulate PC "power" button to start sutdown process
+		flagCanPressButtonAgain = NO; // disable pressing button again until PC shutdown
 	} else {
 		digitalWrite(pinPowerButton, OFF); // end of emulating
 	}
