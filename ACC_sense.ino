@@ -58,7 +58,7 @@ void loop() {
 		&& (CurrentTime < (timeLastPowerOn + timePushPowerButtonDelay + timePushPowerButton))\ 
 		&& (flagCanPressButtonAgain == YES)) {
 		digitalWrite(pinPowerButton, ON); // emulate PC "power" button to start sutdown process
-		flagCanPressButtonAgain = NO; // disable pressing button again until PC shutdown
+		flagCanPressButtonAgain = NO; // disable power button until PC shuts down completely
 	} else {
 		digitalWrite(pinPowerButton, OFF); // end of emulating
 	}
