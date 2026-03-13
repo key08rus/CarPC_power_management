@@ -3,9 +3,9 @@ Manage CarPC power on/off by Arduino
 
 Next management algorythm was realised:
 
-If ACC line was goes high, turn on the CarPC power relay
+If ACC line was goes high, turn on the CarPC power relay.
 When ACC line was goes low, wait 5 seconds and make pulse 0.5s on relay, connected in parallel to CarPC power button, 
-wait another 5 seconds and then turn CarPC power relay off.
+wait additional 5 seconds and then turn CarPC power relay off.
 Used components may been replaced by various analogs.
 
 Управление питанием автомобильного компьютера при помощи Arduino
