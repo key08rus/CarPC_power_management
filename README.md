@@ -6,6 +6,8 @@ Management algorythm:
 If REM line was goes high, but PowerAntenna was low, turn on the CarPC power relay.
 When REM line was goes low, wait 5 seconds and make pulse 0.5s on relay, connected in parallel to CarPC power button, 
 wait additional 5 seconds and then turn CarPC power relay off.
+When P.ANT line was goes high, wait 20 seconds and make pulse 0.5s on relay, connected in parallel to CarPC power button, 
+wait additional 5 seconds and then turn CarPC power relay off.
 Used components may been replaced by various analogs.
 
 Управление питанием автомобильного компьютера при помощи Arduino
